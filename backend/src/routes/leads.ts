@@ -58,7 +58,7 @@ export async function leadRoutes(app: FastifyInstance): Promise<void> {
       data.qualificationStatus = getQualificationStatus(score.total);
       data.updatedAt = new Date();
 
-      const result = await db.collection('leads').insertOne(data);
+      const result = await db.collection('leads').insertOne(data as any);
       logger.info({ leadId: result.insertedId, score: score.total, status: data.qualificationStatus }, 'Lead created');
 
       return reply.status(201).send({ id: result.insertedId, ...data });

@@ -41,7 +41,7 @@ export class GeminiProvider extends BaseAIProvider implements AIProvider {
         .join('\n');
 
       const systemInstructionConfig = systemInstruction
-        ? { parts: [{ text: systemInstruction }] }
+        ? { role: 'system', parts: [{ text: systemInstruction }] }
         : undefined;
 
       const chatMessages = request.messages

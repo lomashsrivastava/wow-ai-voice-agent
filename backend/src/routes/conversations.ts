@@ -4,6 +4,7 @@
 import type { FastifyInstance } from 'fastify';
 import { getDB } from '../config/database.js';
 import { getAIProviderManager } from '../integrations/ai/index.js';
+import type { AIMessage } from '../integrations/ai/types.js';
 import { logger } from '../utils/logger.js';
 import { v4 as uuidv4 } from 'uuid';
 import { WOW_SYSTEM_PROMPT } from '../prompts/system-prompt.js';
@@ -49,8 +50,8 @@ export async function conversationRoutes(app: FastifyInstance): Promise<void> {
     }
 
     // Build message history for AI
-    const messages = [
-      { role: 'system' as const, content: WOW_SYSTEM_PROMPT },
+    const messages: AIMessage[] = [
+      { role: 'system', content: WOW_SYSTEM_PROMPT },
     ];
 
     if (conversation?.messages?.length) {
