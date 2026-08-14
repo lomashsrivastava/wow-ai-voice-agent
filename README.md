@@ -65,10 +65,12 @@ The frontend will start at `http://localhost:5173/` and the backend on port `500
 ## 🌐 Production Deployment
 
 ### Backend (Render)
-Deploy the backend web service by targeting the `backend/` subdirectory with start command `node dist/server.js`. Provide the environment variables securely on the Render dashboard.
+The backend is live on Render at:
+👉 **[https://wow-ai-voice-agent-backend.onrender.com](https://wow-ai-voice-agent-backend.onrender.com)**
 
 ### Frontend (Netlify / Vercel)
-Build the React bundle inside `frontend/` using `npm run build` and host the generated `dist` folder. Update `VITE_API_URL` to point to your live backend endpoint.
+Build the React bundle inside `frontend/` using `npm run build` and deploy the generated `dist` folder. Add the environment variable:
+`VITE_API_URL=https://wow-ai-voice-agent-backend.onrender.com`
 
 ---
 
