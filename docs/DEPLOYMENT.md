@@ -68,9 +68,6 @@ volumes:
 4. Start Command: `node dist/server.js`.
 5. Supply environment variables (API keys, MongoDB URI).
 
-### Frontend (Netlify / Vercel)
-1. Link your repository.
-2. Select the `frontend/` directory.
-3. Build Command: `npm run build`.
-4. Output Directory: `dist`.
-5. Configure `VITE_API_URL` pointing to your live Render Web Service URL.
+### Live Deployment Links
+* **Frontend Site**: [https://wowaivoiceagent.netlify.app](https://wowaivoiceagent.netlify.app)
+* **Backend API Base**: [https://wow-ai-voice-agent-backend.onrender.com](https://wow-ai-voice-agent-backend.onrender.com)
